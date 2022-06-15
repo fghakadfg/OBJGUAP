@@ -1,0 +1,22 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}
+Файлы
+{% endblock %}
+{% block body %}
+     <div class="features">
+        <h1>Файлы</h1>
+        <div>
+             {% for i in content %}
+
+                    <div class="alert alert-warning">
+                            <h2>{{i.Text}}</h2>
+                       <a href="{{i.File.url}}" download="{{i.File.url}}" class="btn btn-warning">Скачать</a>
+                    </div>
+
+                {% endfor %}
+
+            <a class="button" href="{% url 'home'%}">На главную</a>
+        </div>
+     </div>
+{% endblock %}
